@@ -255,10 +255,16 @@ require('lazy').setup({
     ft = { 'markdown' }, -- Only load for markdown files
     config = function()
       require('render-markdown').setup {
+        anti_conceal = {
+          enabled = false, -- Disable anti-conceal to keep formatting visible
+        },
         code = {
-          language_border = ' ',
-          language_left = '',
-          language_right = '',
+          language_pad = 1,
+          left_pad = 1,
+          position = 'right',
+          width = 'block',
+          right_pad = 10,
+          border = 'thick',
           left_margin = 2, -- Adds 2 spaces margin on the left (outside the block)
           style = 'full', -- This enables full syntax highlighting
         },
