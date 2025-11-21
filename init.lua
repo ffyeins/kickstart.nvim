@@ -262,10 +262,6 @@ require('lazy').setup({
           left_margin = 2, -- Adds 2 spaces margin on the left (outside the block)
           style = 'full', -- This enables full syntax highlighting
         },
-        auto_install = true, -- Automatically install missing parsers
-        highlight = {
-          enable = true,
-        },
         bullet = {
           left_pad = 2, -- Adds 2 spaces on the left for list items
         },
