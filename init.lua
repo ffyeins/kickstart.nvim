@@ -247,29 +247,32 @@ rtp:prepend(lazypath)
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
-  'NMAC427/guess-indent.nvim', -- Detect tabstop and shiftwidth automatically
+
+  -- INDENTATION
+  --'NMAC427/guess-indent.nvim', -- Detect tabstop and shiftwidth automatically
 
   {
     'MeanderingProgrammer/render-markdown.nvim',
+    enabled = false,
     dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' },
     ft = { 'markdown' }, -- Only load for markdown files
     config = function()
       require('render-markdown').setup {
         anti_conceal = {
-          enabled = false, -- Disable anti-conceal to keep formatting visible
+          enabled = true, -- Disable anti-conceal to keep formatting visible
         },
         code = {
           language_pad = 1,
-          left_pad = 1,
+          -- left_pad = 1,
           position = 'right',
           width = 'block',
           right_pad = 10,
           border = 'thick',
-          left_margin = 2, -- Adds 2 spaces margin on the left (outside the block)
           style = 'full', -- This enables full syntax highlighting
         },
-        bullet = {
-          left_pad = 2, -- Adds 2 spaces on the left for list items
+        inline_code = {
+          left_pad = 1,
+          right_pad = 1,
         },
       }
     end,
@@ -1059,3 +1062,11 @@ require('lazy').setup({
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+
+-- Set indentation after plugins load
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.softtabstop = 4
+vim.opt.expandtab = false -- When true converts all tabs to spaces
+
+vim.opt.mouse = '' -- FIX for MacBook keyboard copy-paste. This disables mouse reporting.
