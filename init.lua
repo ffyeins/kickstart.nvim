@@ -1069,4 +1069,4 @@ vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
 vim.opt.expandtab = false -- When true converts all tabs to spaces
 
-vim.opt.mouse = '' -- FIX for MacBook keyboard copy-paste. This disables mouse reporting.
+-- vim.opt.mouse = '' -- FIX for MacBook keyboard copy-paste. This disables mouse reporting.
